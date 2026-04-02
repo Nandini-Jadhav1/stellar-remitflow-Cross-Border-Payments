@@ -1,70 +1,55 @@
-<<<<<<< HEAD (Accept current change
-)
-# 🌟 Stellar Pay - Simple Payment dApp
+# 🚀 RemitFlow — Cross-Border Payments on Stellar
 
-A decentralized payment application built on the Stellar testnet that allows users to connect their Freighter wallet and send XLM transactions.
+> Instant international payments in 3-5 seconds with near-zero fees
 
-## 📋 Project Description
+## 🌐 Live Demo
+https://stellar-remitflow-cross-border-paym.vercel.app/
 
-Stellar Pay is a simple payment dApp built with React and the Stellar SDK. Users can connect their Freighter wallet, view their XLM balance, and send XLM to any Stellar testnet address with real-time transaction feedback.
+## 🎥 Demo Video
+[Watch Demo](https://your-loom-link-here)
 
-### Features
-- 🔗 Connect / Disconnect Freighter wallet
-- 💰 Display real-time XLM balance
-- 🚀 Send XLM to any Stellar testnet address
-- ✅ Transaction success / failure feedback
-- 🔍 Transaction hash with link to Stellar Expert Explorer
+## 📋 Overview
+RemitFlow is a web app that lets anyone send money internationally
+using the Stellar network. It solves the core problem of cross-border
+payments being slow, expensive, and opaque.
 
-## 🛠️ Setup Instructions
+## ✨ Features
+- Connect Freighter wallet
+- Send XLM payments instantly
+- Live transaction tracking
+- Stellar Explorer integration
+- Near-zero fees (~0.00001 XLM)
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) installed
-- [Freighter Wallet](https://www.freighter.app/) browser extension installed
-- A funded Stellar testnet account via [Stellar Friendbot](https://friendbot.stellar.org/)
+## 🛠️ Tech Stack
+- React.js
+- Stellar SDK (@stellar/stellar-sdk)
+- Freighter API (@stellar/freighter-api)
+- Stellar Testnet (Horizon API)
 
-### Installation
-
-1. Clone the repository:
+## 🚀 How to Run
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/Nandini-Jadhav1/stellar-remitflow-Cross-Border-Payments
+cd stellar-remitflow-Cross-Border-Payments
 npm install
-```
-
-3. Start the development server:
-```bash
 npm start
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+## 👥 Testnet Users
+| Name | Wallet Address |
+|------|---------------|
+| User 1 | G... |
+| User 2 | G... |
+| User 3 | G... |
+| User 4 | G... |
+| User 5 | G... |
 
-### Freighter Wallet Setup
-1. Install the [Freighter extension](https://www.freighter.app/)
-2. Create or import a wallet
-3. Switch to **Testnet** in Freighter settings
-4. Fund your wallet at [https://friendbot.stellar.org](https://friendbot.stellar.org/)
+## 📊 User Feedback
+[View Feedback Sheet](https://docs.google.com/spreadsheets/...)
 
-## 📸 Screenshots
+## 🏗️ Architecture
+See [ARCHITECTURE.md](./ARCHITECTURE.md)
 
-### Wallet Connected + Balance Displayed
-![Wallet Connected](connected.png)
-
-### Freighter Transaction Confirmation
-![Transaction](transaction.png)
-
-### Successful Transaction Result
-![Success](success.png)
-
-## 🔧 Tech Stack
-- React.js
-- Stellar SDK
-- Freighter API
-- Stellar Testnet (Horizon)
-=======
-# stellar-pay
-A simple Stellar testnet payment dApp built with React. Connect Freighter wallet, view XLM balance, and send XLM transactions.
->>>>>>> 2251d7dff17a0495a2f6bba5092896b3a88d8807
+## 🔄 Planned Improvements (based on user feedback)
+- [ ] Add USDC support → [commit link]
+- [ ] Add transaction history → [commit link]
+- [ ] Mobile responsive design → [commit link]
