@@ -6,7 +6,7 @@
 https://stellar-remitflow-cross-border-paym.vercel.app/
 
 ## 🎥 Demo Video
-[Watch Demo](https://your-loom-link-here)
+[Watch Demo]https://www.loom.com/share/fa59b794df424d98bacfed64b59435e5
 
 ## 📋 Overview
 RemitFlow is a web app that lets anyone send money internationally
@@ -34,14 +34,6 @@ npm install
 npm start
 ```
 
-## 👥 Testnet Users
-| Name | Wallet Address |
-|------|---------------|
-| User 1 | G... |
-| User 2 | G... |
-| User 3 | G... |
-| User 4 | G... |
-| User 5 | G... |
 
 ## 📊 User Feedback
 [View Feedback Sheet](https://docs.google.com/spreadsheets/...)
@@ -49,7 +41,3 @@ npm start
 ## 🏗️ Architecture
 See [ARCHITECTURE.md](./ARCHITECTURE.md)
 
-## 🔄 Planned Improvements (based on user feedback)
-- [ ] Add USDC support → [commit link]
-- [ ] Add transaction history → [commit link]
-- [ ] Mobile responsive design → [commit link]
