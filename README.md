@@ -1,4 +1,4 @@
-# 🚀 RemitFlow — Cross-Border Payments on Stellar
+<!-- # 🚀 RemitFlow — Cross-Border Payments on Stellar
 
 > Instant international payments in 3-5 seconds with near-zero fees
 
@@ -91,4 +91,33 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md)
 - [x] Add footer based on user feedback → [commit](https://github.com/Nandini-Jadhav1/stellar-remitflow-Cross-Border-Payments/commit/06ae662)
 - [ ] Add transaction history page
 - [ ] Mobile responsive improvements
-- [ ] USDC support on mainnet via SEP-24 anchor
+- [ ] USDC support on mainnet via SEP-24 anchor -->
+
+
+
+
+
+## 📊 Metrics Dashboard
+Click the **📊 Metrics** button in the navbar after connecting wallet.
+Tracks: Total users, transactions, XLM volume, daily active users.
+[View on Stellar Explorer](https://stellar.expert/explorer/testnet)
+
+## ⚡ Advanced Feature — Fee Sponsorship
+Fee Bump transactions implemented in `src/components/Freighter.js`.
+Sender sponsors ALL network fees — recipient needs zero XLM.
+Function: `sendWithFeeBump()` — wraps inner payment in fee bump envelope.
+[View commit](https://github.com/Nandini-Jadhav1/remitflow-core-dapp/commit/834be6b1c2d7978d5c5918cf6eaf43edf6ef9efe)
+
+## 🔒 Security Checklist
+[View SECURITY.md](./SECURITY.md)
+
+## 📖 User Guide
+[View USER_GUIDE.md](./USER_GUIDE.md)
+
+## 🌍 Community Contribution
+[Tweet about RemitFlow](PASTE_YOUR_TWEET_URL_HERE)
+
+## 📈 Data Indexing
+Stellar Horizon API used for transaction indexing.
+Endpoint: `https://horizon-testnet.stellar.org/accounts/{address}/payments`
+Dashboard: Built into app — click Metrics button after connecting.
