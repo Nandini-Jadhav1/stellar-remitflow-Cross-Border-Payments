@@ -53,6 +53,7 @@ npm start
 | Harshal Jagdale | GCATAASNFHODIKA4VTIEZHONZB3BGZJL42FXHHZ3VS6YKX2PCDIJ3LDY | harshaljagdale40@gmail.com | Transaction was instant! ⭐⭐⭐⭐ |
 | Yash Annadate | GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE | yashannadate2005@gmail.com | Would love transaction history ⭐⭐⭐⭐⭐ |
 | Yuvraj Vibhute | GARXEMFNMVPPXSTQYMXAU2KTLTTG4ZV7R5F56HHT7QGI6L3QAGHRTMBT | yuvishine40@gmail.com | Add mobile support please ⭐⭐⭐⭐ |
+|Vikas Dhanavade|GAUHSW34K5KW7JLOGH2X2JROJXG2DXYIE7NREBTMCHAF7DYK5Y7YBSKX | vikasdhanavade2141@gmail.com |but adding more user-focused features and improving scalability would make it even more powerful.| ⭐⭐⭐⭐⭐ |
 
 ## 📊 User Feedback
 [View Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdL-BiRPy22kKXl-sDsVY6c0QeUh-duUW8z7_QTkhRGHj8pTw/viewform)
