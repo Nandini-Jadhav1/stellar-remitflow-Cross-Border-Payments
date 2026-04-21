@@ -49,59 +49,59 @@ npm start
 ```
 
 ## 📁 Project Structure
+```
 Remitflow-dapp/
 ├── contracts/remitflow/
 │   ├── Cargo.toml
 │   └── src/
-│       ├── lib.rs        ← Soroban smart contract
-│       └── test.rs       ← Contract unit tests
+│       ├── lib.rs
+│       └── test.rs
 ├── src/components/
-│   ├── Header.js         ← Main app UI (3-screen flow)
-│   ├── Freighter.js      ← Wallet + Stellar SDK + Fee Bump
-│   └── MetricsDashboard.js ← Live metrics tracking
-├── src/contract.ts       ← TypeScript contract bindings
+│   ├── Header.js
+│   ├── Freighter.js
+│   └── MetricsDashboard.js
+├── src/contract.ts
 ├── SECURITY.md
 ├── USER_GUIDE.md
 └── ARCHITECTURE.md
+```
 
-## 👥 Testnet Users
-  Full Name | Email Address | Stellar Wallet Address|  Rate RemitFlow 1-5 | Feedback | 
-|-----------|---------------|-----------------------|----------------------|
-Harshal Jagdale |harshaljagdale40@gmail.| GCATAASNFHODIKA4VTIEZHONZB3BGZJL42FXHHZ3VS6YKX2PCDIJ3LDY| 4 |	Good |
-Dnyaneshwari Badhe| dnyaneshwaribadhe2323@gmail.com	|GATCVV5LUG2YM6Y7YMN3LHZWRVV3MT34WBL7ZBPCIXKGAYXIQ3WG6SXZ |	5 |"
-Features are well-implemented. Add more testing details.Include user feedback section"|
-Yash Annadate| yashannadate2005@gmail.com|	GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE |5 |Overall everything is fine, for futures would expect portfolios or market place options|
-Shubham Golekar| shubhamgolekar62021@gmail.com |	GA3PMUXWSCWLT2FMQ76PODPODHLJHOWAHTD7JGOWHGGE5FZ3WWF6EJBO  |5 | All |
-Yuvraj Vibhute| yuvishine40@gmail.com |	GARXEMFNMVPPXSTQYMXAU2KTLTTG4ZV7R5F56HHT7QGI6L3QAGHRTMBT |5 |	no
-Vikas Dhanavade |vikasdhanavade2141@gmail.com |	GAUHSW34K5KW7JLOGH2X2JROJXG2DXYIE7NREBTMCHAF7DYK5Y7YBSKX |	5 |	“The dApp has strong potential to simplify cross-border payments using blockchain, but adding more user-focused features and improving scalability would make it even more powerful.” |
-Rushikesh Gaiwal |rushikeshgaiwal66@gmail.com |	GADY24FFOBCTVQJIBCP6OCX6QPVODAQM4IEMYUKS5VSVN564XQPSWXGY |	5 |	Good | 
-Manohar Pandurang Kalel | kalelmanohar97@gmail.com	|GCCMU5J4EDPDPINUGG5EAXDNRTYKPWUB4HOZI33K76OSNZUFD2KWWJ4K |5 |	had a great experience with this app |
-Amar Dattatray More |amarmore854@gmail.|GDME4ZHGKH5RNUOY5XC5B2TPAIU3NXDJHOWPYLDGY7SJYBKR2WTI2KVI |5 | Wallet connection process is simple and user-friendly.|
-Ishika Nandanwar  | nandanwarishika@gmail.com |GCNE2J6JCKQO6J3RKFECAJ73DN7FCHCZRLMDSH3SRKOJDDOZEMR3A3LB	| 5|	Scope to improve UI and add more user focused features |
-Khushi Nagare | khushinagare8@gmail.com |	GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU6 | 5 |	All the buttons are working the ui is nicee |
-Paras Babar	| parasbabar4@gmail.com |	GDLQ6YCG5TKSZP44A2MNVHYKKGCBJX6AIG2EBBGEQXNGMD2GM5ZXWRWW |5 |	Include a “Report Problem” button and feature voting board so users can quickly flag issues and suggest improvements.|
-Payal Shrikant Babar | babarpayal953@gmail.com |	GAI77NXTXFHIDPLRDY24DHY4YQGRWANIV25FRVNHZ2GWFSCNMW76H27Q |5 |	I would like to see better notifications and more useful features to make the project easier to use.|
-Kalyani Deshmukh |deshmukhkalyani833@gmail.com |	GDQASLYOLB2FTSAYPSGVWIXG7Q2RFYHR76XAJWKW37EFPMGBQWKLKLWI |5 |	Add more security features |
-Anushka pathak | Anushkapathak0876@gmail.com | GBDLPQL6H2QZBMFB5CFHZVWARPOHOP5KTEKTCUO65JIDH6HAQYB7SFPO |5 |	Great app, very easy to use! |
-Mrudula Dhananjay Devkar| mruduladevkar40@gmail.com |GAQUPLT54ZX2ZJN7OJRHAKNDY5SX3XPJOBZXL2BBIARSHHRTWWDW4GUO| 4 |	...
-Jadhav tanaya | tanayajadhav56@gmail.com |	GDORYG2MGTK3WJL45W5SPEX4CBLRD2EBH4B2HZTROCRVRQ2Y2SF7PLIL |5 |	Nothing |
-Vaishnavi Konde | vaishnavikonde2006@gmail.com |	GDGO2NJAXS3E5P7RF2P3YRN7AB4NIYTCRU6XSY4U6RAS62N54HRG7OOF | 5 |	No it is very good application |
-Runav Phate  | phaterunav@gmail.com |	GCHB2KGFMWFAM7HOQYUFNPQXAQMAY6U7OLXAP4BEJWIJWXBV6IDKB7DR | 5 |	Improve UI
-Aayusha | jagtapaayusha17@gmail.com	|GAU6Z4MRXARKACHU54NMGAUIFBKTL23TTPIY76BWQA665ZUXYASEKNZY |	5 |	
-Priyadarshani A Satubar |		GA4S66SWIWJAKNEQW5N3RKCEOHRY4TY4JU3ZMPHD64LML7TIG3I5U5YW |	5 |	It is good and very |
-Soham Ghuge | sohamghuge63@gmail.com | GCZXHLXNKRQZ7FA3MV575L2OZ7UCYCMZCKKMBZN64MQ2XTD2TFCYHP2V | 5 |	all features are good |
-Sarthak Dhere| sarthakdhere0217@gmail.com |	GCRYPAQB3TFLQE727TA3R723QIEPTP5KCMP7OMH4HVXNLCEUKPD4AZJP| 5 |	Overall a great website |
-Shritesh Patil | patilshritesh863@gmail.com	|GAGBMRVUN2IBMXJUFNGRD7BHWYQACCGXDVV6X4GXTNXQC5DGCRMW2CQ3 |	5 |	Very good project |
-Vaibhavi Agale| vaibhaviagale7799@gmail.com |	GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ |5 |	Overall a great website |
-Poorva Mulimani | poorvam2006@gmail.com	|GBNOBRJ73DRVVHE4MJPDRIOVP3MZ7BHOO2ISZDMPJWDNHPCPVRZLRILT |5 |Had great experience with the app |
-Samruddhi Nevse	| nevsesamruddhi@gmail.com	|GDHOWWJM3ZU7XN7BF7IQFFXXFNN3Y2ZL7I4253F5KHTA5FFN57SFLMWZ |	5 |	nice application good |
-Jadhav Vaibhavi Ajay| vaibhavijadhav856@gmail.com |	GDJ6VJX3OVJJLIF2J2JRBBDD6PYAZNLAMJIDOLJQSWTUCGDSKEBOEOFP |	5 |	Was simple and useful|
-Meghiya Tulse| meghiyatulse24@gmail.com	|GB2FK6UX2HC7U2LFML6OZFJLJGFUCX7S37EZDVA5MPM5O5D5NLH65SOV |	5 |	Good Application for certification |
-janhavi lipare| janhavilipare9948@gmail.com	|GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI |	5	| app works smoothly , idea is unique and userfriendly |
-om golekar| omgolekar.46@gmail.com |	GDUFDJ23MIR2KR6FC3VTKA7YTCLJAJY5GL2UIX35HCFCZUPJCW7ZT6K5 |	4 |	very good project |
-Vaishnavi Shille| GBR2YFEBQWS6NLXDQFHBZ3WE7WIARX6LZFOX3VYQVFHKM6B3FG52UTO5|5|		Very easy to use |
-Pratiksha kalbhor |	pratikshaspark12@gmail.com |	GCYO66SNVSGBBJB3LDGDIGNTW5Y7H4FEWF65MU4BBH7YSXDRYZWWMY6C   | 4 |easy to use |
-	
+## 👥 Testnet Users (33 Verified)
+| Full Name | Email | Wallet Address | Rating | Feedback |
+|-----------|-------|---------------|--------|----------|
+| Harshal Jagdale | harshaljagdale40@gmail.com | GCATAASNFHODIKA4VTIEZHONZB3BGZJL42FXHHZ3VS6YKX2PCDIJ3LDY | 4⭐ | Good |
+| Dnyaneshwari Badhe | dnyaneshwaribadhe2323@gmail.com | GATCVV5LUG2YM6Y7YMN3LHZWRVV3MT34WBL7ZBPCIXKGAYXIQ3WG6SXZ | 5⭐ | Features are well-implemented |
+| Yash Annadate | yashannadate2005@gmail.com | GBWDGDXAN4AW22OBEQADIOSK2GE7EFNDLZDTBJV6AP33SEPTGNNGFDAE | 5⭐ | Overall everything is fine |
+| Shubham Golekar | shubhamgolekar62021@gmail.com | GA3PMUXWSCWLT2FMQ76PODPODHLJHOWAHTD7JGOWHGGE5FZ3WWF6EJBO | 5⭐ | All features good |
+| Yuvraj Vibhute | yuvishine40@gmail.com | GARXEMFNMVPPXSTQYMXAU2KTLTTG4ZV7R5F56HHT7QGI6L3QAGHRTMBT | 5⭐ | Good |
+| Vikas Dhanavade | vikasdhanavade2141@gmail.com | GAUHSW34K5KW7JLOGH2X2JROJXG2DXYIE7NREBTMCHAF7DYK5Y7YBSKX | 5⭐ | Strong potential |
+| Rushikesh Gaiwal | rushikeshgaiwal66@gmail.com | GADY24FFOBCTVQJIBCP6OCX6QPVODAQM4IEMYUKS5VSVN564XQPSWXGY | 5⭐ | Good |
+| Manohar Kalel | kalelmanohar97@gmail.com | GCCMU5J4EDPDPINUGG5EAXDNRTYKPWUB4HOZI33K76OSNZUFD2KWWJ4K | 5⭐ | Great experience |
+| Amar More | amarmore854@gmail.com | GDME4ZHGKH5RNUOY5XC5B2TPAIU3NXDJHOWPYLDGY7SJYBKR2WTI2KVI | 5⭐ | Simple and user-friendly |
+| Ishika Nandanwar | nandanwarishika@gmail.com | GCNE2J6JCKQO6J3RKFECAJ73DN7FCHCZRLMDSH3SRKOJDDOZEMR3A3LB | 5⭐ | Scope to improve UI |
+| Khushi Nagare | khushinagare8@gmail.com | GAYUBQQSVMCPC6UE6YNDAUTBMA7A5Q5EZBZWDHYRYXOPBMV57SQGZU6 | 5⭐ | Buttons working, UI nice |
+| Paras Babar | parasbabar4@gmail.com | GDLQ6YCG5TKSZP44A2MNVHYKKGCBJX6AIG2EBBGEQXNGMD2GM5ZXWRWW | 5⭐ | Add Report Problem button |
+| Payal Babar | babarpayal953@gmail.com | GAI77NXTXFHIDPLRDY24DHY4YQGRWANIV25FRVNHZ2GWFSCNMW76H27Q | 5⭐ | Better notifications needed |
+| Kalyani Deshmukh | deshmukhkalyani833@gmail.com | GDQASLYOLB2FTSAYPSGVWIXG7Q2RFYHR76XAJWKW37EFPMGBQWKLKLWI | 5⭐ | Add more security features |
+| Anushka Pathak | Anushkapathak0876@gmail.com | GBDLPQL6H2QZBMFB5CFHZVWARPOHOP5KTEKTCUO65JIDH6HAQYB7SFPO | 5⭐ | Very easy to use |
+| Mrudula Devkar | mruduladevkar40@gmail.com | GAQUPLT54ZX2ZJN7OJRHAKNDY5SX3XPJOBZXL2BBIARSHHRTWWDW4GUO | 4⭐ | Good |
+| Jadhav Tanaya | tanayajadhav56@gmail.com | GDORYG2MGTK3WJL45W5SPEX4CBLRD2EBH4B2HZTROCRVRQ2Y2SF7PLIL | 5⭐ | Nothing to add |
+| Vaishnavi Konde | vaishnavikonde2006@gmail.com | GDGO2NJAXS3E5P7RF2P3YRN7AB4NIYTCRU6XSY4U6RAS62N54HRG7OOF | 5⭐ | Very good application |
+| Runav Phate | phaterunav@gmail.com | GCHB2KGFMWFAM7HOQYUFNPQXAQMAY6U7OLXAP4BEJWIJWXBV6IDKB7DR | 5⭐ | Improve UI |
+| Aayusha Jagtap | jagtapaayusha17@gmail.com | GAU6Z4MRXARKACHU54NMGAUIFBKTL23TTPIY76BWQA665ZUXYASEKNZY | 5⭐ | Good |
+| Priyadarshani Satubar | - | GA4S66SWIWJAKNEQW5N3RKCEOHRY4TY4JU3ZMPHD64LML7TIG3I5U5YW | 5⭐ | Good and very useful |
+| Soham Ghuge | sohamghuge63@gmail.com | GCZXHLXNKRQZ7FA3MV575L2OZ7UCYCMZCKKMBZN64MQ2XTD2TFCYHP2V | 5⭐ | All features good |
+| Sarthak Dhere | sarthakdhere0217@gmail.com | GCRYPAQB3TFLQE727TA3R723QIEPTP5KCMP7OMH4HVXNLCEUKPD4AZJP | 5⭐ | Great website |
+| Shritesh Patil | patilshritesh863@gmail.com | GAGBMRVUN2IBMXJUFNGRD7BHWYQACCGXDVV6X4GXTNXQC5DGCRMW2CQ3 | 5⭐ | Very good project |
+| Vaibhavi Agale | vaibhaviagale7799@gmail.com | GALWWEGHOMU5YODTZBVGPFP2OHCJH5VO3VKWNMW7ZNT6OECINVPQT7SQ | 5⭐ | Great website |
+| Poorva Mulimani | poorvam2006@gmail.com | GBNOBRJ73DRVVHE4MJPDRIOVP3MZ7BHOO2ISZDMPJWDNHPCPVRZLRILT | 5⭐ | Great experience |
+| Samruddhi Nevse | nevsesamruddhi@gmail.com | GDHOWWJM3ZU7XN7BF7IQFFXXFNN3Y2ZL7I4253F5KHTA5FFN57SFLMWZ | 5⭐ | Nice application |
+| Vaibhavi Jadhav | vaibhavijadhav856@gmail.com | GDJ6VJX3OVJJLIF2J2JRBBDD6PYAZNLAMJIDOLJQSWTUCGDSKEBOEOFP | 5⭐ | Simple and useful |
+| Meghiya Tulse | meghiyatulse24@gmail.com | GB2FK6UX2HC7U2LFML6OZFJLJGFUCX7S37EZDVA5MPM5O5D5NLH65SOV | 5⭐ | Good application |
+| Janhavi Lipare | janhavilipare9948@gmail.com | GBLUMAX4IIPS54AIGD5WXRRAXISG4HLV3BE3YR3SQAD3GZSXRTVJY5GI | 5⭐ | Smooth, unique and user-friendly |
+| Om Golekar | omgolekar.46@gmail.com | GDUFDJ23MIR2KR6FC3VTKA7YTCLJAJY5GL2UIX35HCFCZUPJCW7ZT6K5 | 4⭐ | Very good project |
+| Vaishnavi Shille | - | GBR2YFEBQWS6NLXDQFHBZ3WE7WIARX6LZFOX3VYQVFHKM6B3FG52UTO5 | 5⭐ | Very easy to use |
+| Pratiksha Kalbhor | pratikshaspark12@gmail.com | GCYO66SNVSGBBJB3LDGDIGNTW5Y7H4FEWF65MU4BBH7YSXDRYZWWMY6C | 4⭐ | Easy to use |
 ## 📊 User Feedback
 [View Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdL-BiRPy22kKXl-sDsVY6c0QeUh-duUW8z7_QTkhRGHj8pTw/viewform)
 
@@ -173,8 +173,9 @@ How it works:
 **Approach:** Stellar Horizon API used as indexing layer.
 
 **Endpoint:**
+```
 GET https://horizon-testnet.stellar.org/accounts/{address}/payments
-
+```
 MetricsDashboard queries this for all tracked wallets in real-time.
 
 [Stellar Explorer](https://stellar.expert/explorer/testnet)
