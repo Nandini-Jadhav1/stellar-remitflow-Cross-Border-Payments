@@ -1,8 +1,3 @@
-
-
-
-
-
 import React, { useState, useEffect } from "react";
 import {
   checkConnection,
@@ -29,6 +24,8 @@ const Header = () => {
   const [lastUseUSDC, setLastUseUSDC] = useState(false);
   const [screen, setScreen] = useState("form");
   const [showMetrics, setShowMetrics] = useState(false);
+  const [addressError, setAddressError] = useState("");
+  const [amountError, setAmountError] = useState("");
 
   useEffect(() => {
     if (!amount || parseFloat(amount) <= 0 || !useUSDC) {
@@ -43,6 +40,28 @@ const Header = () => {
     }, 600);
     return () => clearTimeout(timer);
   }, [amount, useUSDC]);
+
+  useEffect(() => {
+    if (Notification.permission === "default") {
+      Notification.requestPermission();
+    }
+  }, [connected]);
+
+  const validateAddress = (addr) => {
+    if (!addr) return "Address is required";
+    if (!addr.startsWith("G")) return "Address must start with G";
+    if (addr.length !== 56) return "Address must be exactly 56 characters";
+    if (!/^[A-Z2-7]{56}$/.test(addr)) return "Invalid characters in address";
+    return "";
+  };
+
+  const validateAmount = (amt) => {
+    if (!amt) return "Amount is required";
+    if (parseFloat(amt) <= 0) return "Amount must be greater than 0";
+    if (parseFloat(amt) < 0.0000001) return "Amount too small (min 0.0000001 XLM)";
+    if (parseFloat(amt) > parseFloat(balance)) return "Insufficient balance (" + balance + " XLM available)";
+    return "";
+  };
 
   const connectWallet = async () => {
     try {
@@ -73,21 +92,37 @@ const Header = () => {
     setUseUSDC(false);
     setFeeBump(false);
     setScreen("form");
+    setAddressError("");
+    setAmountError("");
+  };
+
+  const handleAddressChange = (e) => {
+    const val = e.target.value;
+    setDestination(val);
+    if (val) setAddressError(validateAddress(val));
+    else setAddressError("");
+  };
+
+  const handleAmountChange = (e) => {
+    const val = e.target.value;
+    setAmount(val);
+    if (val) setAmountError(validateAmount(val));
+    else setAmountError("");
+  };
+
+  const showNotification = (title, body) => {
+    if (Notification.permission === "granted") {
+      new Notification(title, { body, icon: "/favicon.ico" });
+    }
   };
 
   const handleSend = async () => {
-    if (!destination || !amount) {
-      alert("Please enter destination and amount.");
-      return;
-    }
-    if (!destination.startsWith("G") || destination.length !== 56) {
-      alert("Invalid Stellar address.");
-      return;
-    }
-    if (parseFloat(amount) > parseFloat(balance)) {
-      alert("Insufficient balance.");
-      return;
-    }
+    const addrErr = validateAddress(destination);
+    const amtErr = validateAmount(amount);
+    setAddressError(addrErr);
+    setAmountError(amtErr);
+    if (addrErr || amtErr) return;
+
     try {
       setLoading(true);
       setTxResult("Processing...");
@@ -101,11 +136,15 @@ const Header = () => {
       setUseUSDC(false);
       setFeeBump(false);
       setExchangeRate(null);
+      setAddressError("");
+      setAmountError("");
       const bal = await getBalance();
       setBalance(Number(bal).toFixed(2));
+      showNotification("RemitFlow ✅", "Payment successful! View on Stellar Explorer.");
       setScreen("success");
     } catch (e) {
       setTxResult("Failed: " + e.message);
+      showNotification("RemitFlow ❌", "Payment failed: " + e.message);
       setScreen("error");
     } finally {
       setLoading(false);
@@ -118,6 +157,13 @@ const Header = () => {
     setScreen("form");
   };
 
+  const reportProblem = () => {
+    window.open(
+      "https://github.com/Nandini-Jadhav1/Remitflow-dapp/issues/new?title=Bug+Report&body=Describe+the+issue+here",
+      "_blank"
+    );
+  };
+
   const shortKey = publicKey ? publicKey.slice(0, 6) + "..." + publicKey.slice(-6) : "";
 
   const S = {
@@ -128,9 +174,10 @@ const Header = () => {
     center: { flex: 1, display: "flex", justifyContent: "center", alignItems: "center", padding: "40px 20px" },
     card: { background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "28px", padding: "40px", width: "100%", maxWidth: "500px", boxShadow: "0 25px 60px rgba(0,0,0,0.4)" },
     cardTitle: { fontSize: "26px", fontWeight: "800", textAlign: "center", marginBottom: "24px", background: "linear-gradient(90deg, #a78bfa, #60a5fa)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" },
-    input: { width: "100%", padding: "14px 16px", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box", marginBottom: "16px" },
+    input: (hasError) => ({ width: "100%", padding: "14px 16px", background: "rgba(255,255,255,0.06)", border: hasError ? "1px solid rgba(239,68,68,0.6)" : "1px solid rgba(255,255,255,0.12)", borderRadius: "12px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box", marginBottom: "4px" }),
+    errorText: { color: "#f87171", fontSize: "11px", marginBottom: "12px", display: "block" },
     row: { display: "flex", justifyContent: "space-between", fontSize: "13px", color: "rgba(255,255,255,0.5)", marginBottom: "6px" },
-    footer: { textAlign: "center", padding: "20px", color: "rgba(255,255,255,0.25)", fontSize: "12px", borderTop: "1px solid rgba(255,255,255,0.05)" },
+    footer: { textAlign: "center", padding: "16px 20px", color: "rgba(255,255,255,0.25)", fontSize: "12px", borderTop: "1px solid rgba(255,255,255,0.05)" },
     badge: (r, g, b) => ({ background: "rgba("+r+","+g+","+b+",0.1)", border: "1px solid rgba("+r+","+g+","+b+",0.3)", borderRadius: "999px", padding: "7px 16px", fontSize: "13px", color: "rgb("+r+","+g+","+b+")", fontWeight: "600" }),
     pathNode: (r, g, b) => ({ background: "rgba("+r+","+g+","+b+",0.12)", border: "1px solid rgba("+r+","+g+","+b+",0.3)", borderRadius: "999px", padding: "6px 16px", fontSize: "13px", color: "rgb("+r+","+g+","+b+")" }),
   };
@@ -143,10 +190,7 @@ const Header = () => {
       </div>
       {connected && (
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <button
-            onClick={() => setShowMetrics(true)}
-            style={{ background: "rgba(167,139,250,0.1)", border: "1px solid rgba(167,139,250,0.3)", borderRadius: "999px", padding: "7px 16px", fontSize: "13px", color: "#a78bfa", cursor: "pointer" }}
-          >
+          <button onClick={() => setShowMetrics(true)} style={{ background: "rgba(167,139,250,0.1)", border: "1px solid rgba(167,139,250,0.3)", borderRadius: "999px", padding: "7px 16px", fontSize: "13px", color: "#a78bfa", cursor: "pointer" }}>
             📊 Metrics
           </button>
           <span style={S.badge(167, 139, 250)}>🔑 {shortKey}</span>
@@ -161,10 +205,15 @@ const Header = () => {
 
   const Footer = () => (
     <footer style={S.footer}>
-      Built on Stellar Testnet · RemitFlow 2025 ·{" "}
-      <a href="https://stellar.expert/explorer/testnet" target="_blank" rel="noreferrer" style={{ color: "#a78bfa" }}>
-        Stellar Explorer
-      </a>
+      <div style={{ marginBottom: "8px" }}>
+        Built on Stellar Testnet · RemitFlow 2025 ·{" "}
+        <a href="https://stellar.expert/explorer/testnet" target="_blank" rel="noreferrer" style={{ color: "#a78bfa" }}>
+          Stellar Explorer
+        </a>
+      </div>
+      <button onClick={reportProblem} style={{ background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "999px", padding: "5px 14px", fontSize: "11px", color: "#f87171", cursor: "pointer" }}>
+        🐛 Report a Problem
+      </button>
     </footer>
   );
 
@@ -246,9 +295,12 @@ const Header = () => {
           <div style={{ ...S.card, textAlign: "center" }}>
             <div style={{ fontSize: "64px", marginBottom: "16px" }}>❌</div>
             <h2 style={{ fontSize: "24px", fontWeight: "800", marginBottom: "12px", color: "#f87171" }}>Transaction Failed</h2>
-            <p style={{ color: "rgba(255,255,255,0.45)", marginBottom: "24px", fontSize: "14px" }}>
+            <p style={{ color: "rgba(255,255,255,0.45)", marginBottom: "16px", fontSize: "14px" }}>
               {txResult.replace("Failed: ", "")}
             </p>
+            <button onClick={reportProblem} style={{ width: "100%", padding: "12px", background: "rgba(239,68,68,0.1)", border: "1px solid rgba(239,68,68,0.3)", borderRadius: "12px", color: "#f87171", fontSize: "14px", fontWeight: "600", cursor: "pointer", marginBottom: "12px" }}>
+              🐛 Report This Problem
+            </button>
             <button onClick={handleSendAnother} style={{ width: "100%", padding: "14px", background: "linear-gradient(135deg, #7c3aed, #4f46e5)", border: "none", borderRadius: "12px", color: "#fff", fontSize: "15px", fontWeight: "700", cursor: "pointer" }}>
               Try Again →
             </button>
@@ -273,10 +325,25 @@ const Header = () => {
           </div>
 
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginBottom: "8px" }}>Recipient Stellar Address</p>
-          <input type="text" placeholder="G... (56 characters)" value={destination} onChange={(e) => setDestination(e.target.value)} style={S.input} />
+          <input
+            type="text"
+            placeholder="G... (56 characters)"
+            value={destination}
+            onChange={handleAddressChange}
+            style={S.input(!!addressError)}
+          />
+          {addressError && <span style={S.errorText}>⚠️ {addressError}</span>}
 
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", marginBottom: "8px" }}>Amount (XLM)</p>
-          <input type="number" placeholder="0.00" value={amount} onChange={(e) => setAmount(e.target.value)} min="0" style={S.input} />
+          <input
+            type="number"
+            placeholder="0.00"
+            value={amount}
+            onChange={handleAmountChange}
+            min="0"
+            style={S.input(!!amountError)}
+          />
+          {amountError && <span style={S.errorText}>⚠️ {amountError}</span>}
 
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", padding: "14px 16px", marginBottom: "12px" }}>
             <div>
@@ -314,7 +381,11 @@ const Header = () => {
             </div>
           )}
 
-          <button onClick={handleSend} disabled={loading} style={{ width: "100%", padding: "16px", background: loading ? "rgba(124,58,237,0.35)" : "linear-gradient(135deg, #7c3aed, #4f46e5)", border: "none", borderRadius: "14px", color: "#fff", fontSize: "16px", fontWeight: "700", cursor: loading ? "not-allowed" : "pointer", boxShadow: "0 8px 24px rgba(124,58,237,0.3)" }}>
+          <button
+            onClick={handleSend}
+            disabled={loading || !!addressError || !!amountError}
+            style={{ width: "100%", padding: "16px", background: (loading || addressError || amountError) ? "rgba(124,58,237,0.35)" : "linear-gradient(135deg, #7c3aed, #4f46e5)", border: "none", borderRadius: "14px", color: "#fff", fontSize: "16px", fontWeight: "700", cursor: (loading || addressError || amountError) ? "not-allowed" : "pointer", boxShadow: "0 8px 24px rgba(124,58,237,0.3)" }}
+          >
             {loading ? "⏳ Processing..." : "🚀 Send " + (useUSDC ? "as USDC" : "XLM")}
           </button>
         </div>
