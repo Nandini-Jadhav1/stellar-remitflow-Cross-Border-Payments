@@ -134,9 +134,6 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md)
 - [x] Add security checklist → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/b6f03fb)
 - [x] Add user guide → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/7ae1994)
 - [x] Clean production code — remove all commented code → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/eb04556)
-- [ ] Add transaction history page
-- [ ] Mobile responsive improvements
-- [ ] USDC support on mainnet
 
 ## 📊 Metrics Dashboard
 Click **📊 Metrics** button in navbar after connecting wallet.
