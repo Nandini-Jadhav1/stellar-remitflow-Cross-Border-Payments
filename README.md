@@ -114,26 +114,27 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md)
 
 | User Name | User Email | User Feedback | Change Made in Code | Commit ID |
 |-----------|------------|---------------|---------------------|-----------|
-| Paras Babar | parasbabar4@gmail.com | Include a Report Problem button so users can quickly flag issues | Added 🐛 Report Problem button in Footer and Error screen | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
-| Payal Babar | babarpayal953@gmail.com | Better notifications to make the project easier to use | Added browser push notifications for payment success and failure | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
-| Kalyani Deshmukh | deshmukhkalyani833@gmail.com | Add more security features | Added real-time address format validation and balance check with error messages | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
-| Harshal Jagdale | harshaljagdale40@gmail.com | Show exchange rate before sending | Added live exchange rate preview in Transaction Preview box | [a3b970a](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/a3b970a) |
-| Shubham Golekar | shubhamgolekar62021@gmail.com | Add USDC payment option | Added Path Payment toggle — XLM to USDC via Stellar DEX | [a3b970a](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/a3b970a) |
-| Dnyaneshwari Badhe | dnyaneshwaribadhe2323@gmail.com | Add success screen after payment | Added dedicated Payment Successful screen with transaction hash | [834be6b](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/834be6b) |
+| Paras Babar | parasbabar4@gmail.com | Include a "Report Problem" button so users can quickly flag issues | Added 🐛 Report Problem button in Footer and Error screen | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
+| Payal Babar | babarpayal953@gmail.com | I would like to see better notifications and more useful features | Added browser push notifications for payment success and failure | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
+| Kalyani Deshmukh | deshmukhkalyani833@gmail.com | Add more security features | Added real-time address validation and balance check with error messages | [4aa715e](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e) |
+| Ishika Nandanwar | nandanwarishika@gmail.com | Scope to improve UI and add more user focused features | Added metrics dashboard with live tracking and improved UI | [2d7015a](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/2d7015a) |
+| Runav Phate | phaterunav@gmail.com | Improve UI | Added 3-screen flow with dedicated success and error screens | [834be6b](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/834be6b) |
+| Dnyaneshwari Badhe | dnyaneshwaribadhe2323@gmail.com | Features are well-implemented. Add more testing details. Include user feedback section | Added complete user feedback section and Google Sheet link in README | [2f49779](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/2f49779) |
 
 ### ✅ Changes Made Based on Feedback:
-- [x] Add Report Problem button → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
-- [x] Add browser notifications for success/failure → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
-- [x] Add real-time input validation and security → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
-- [x] Add live exchange rate preview → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/a3b970a)
-- [x] Add USDC path payment option → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/a3b970a)
-- [x] Add success/error screens → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/834be6b)
+- [x] Add Report Problem button (Paras Babar) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
+- [x] Add browser notifications (Payal Babar) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
+- [x] Add real-time security validation (Kalyani Deshmukh) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/4aa715e)
+- [x] Add metrics dashboard and improve UI (Ishika Nandanwar) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/2d7015a)
+- [x] Add success and error screens (Runav Phate) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/834be6b)
+- [x] Add user feedback section in README (Dnyaneshwari Badhe) → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/2f49779)
 - [x] Add Fee Bump gasless transactions → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/c10637b)
-- [x] Add metrics dashboard → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/2d7015a)
 - [x] Add Soroban smart contract → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/adafc96)
 - [x] Add security checklist → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/b6f03fb)
 - [x] Add user guide → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/7ae1994)
-- [x] Clean production code — remove all commented code → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/eb04556)
+- [x] Clean production code → [commit](https://github.com/Nandini-Jadhav1/Remitflow-dapp/commit/eb04556)
+
+
 
 ## 📊 Metrics Dashboard
 Click **📊 Metrics** button in navbar after connecting wallet.
